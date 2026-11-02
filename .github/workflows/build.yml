@@ -48,7 +48,7 @@ jobs:
           export THEOS="$HOME/theos-roothide"
           set -e
           "$(brew --prefix make)/bin/gmake" clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
-          cp packages/*_iphoneos-arm*.deb ../Atria-ZD.roothide.deb
+          n=0; for d in packages/*.deb; do n=$((n+1)); cp -f "$d" "../Atria-ZD.roothide.$n.deb"; done
 
       - name: Prepare Theos (rootless)
         run: |
@@ -65,13 +65,13 @@ jobs:
           export THEOS="$HOME/theos-rootless"
           set -e
           "$(brew --prefix make)/bin/gmake" clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          cp packages/*_iphoneos-arm*.deb ../Atria-ZD.rootless.deb
+          n=0; for d in packages/*.deb; do n=$((n+1)); cp -f "$d" "../Atria-ZD.rootless.$n.deb"; done
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Atria-ZD-deb
           path: |
-            Atria-ZD.roothide.deb
-            Atria-ZD.rootless.deb
+            Atria-ZD.roothide.*.deb
+            Atria-ZD.rootless.*.deb
           if-no-files-found: error
