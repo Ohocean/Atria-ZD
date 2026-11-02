@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>enabled</key>
+	<true/>
+	<key>layoutEnabled</key>
+	<true/>
+	<key>showWelcome</key>
+	<false/>
+	<key>showTooltips</key>
+	<false/>
+	<key>hs_columns</key>
+	<integer>6</integer>
+	<key>hs_rows</key>
+	<integer>6</integer>
+	<key>hs_iconScale</key>
+	<real>0.85</real>
+	<key>hs_spacing_x</key>
+	<integer>0</integer>
+	<key>hs_spacing_y</key>
+	<integer>0</integer>
+	<key>hideLabels</key>
+	<false/>
+	<key>hideLabelsFolders</key>
+	<false/>
+	<key>enableAppLibrary</key>
+	<true/>
+	<key>dock_columns</key>
+	<integer>5</integer>
+	<key>dock_rows</key>
+	<integer>1</integer>
+	<key>dock_iconScale</key>
+	<real>0.85</real>
+	<key>dock_bg</key>
+	<real>1</real>
+</dict>
+</plist>
