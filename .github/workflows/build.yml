@@ -44,9 +44,8 @@ jobs:
 
       - name: Build roothide deb (Relaxin 用这个)
         working-directory: atria
-        env:
-          THEOS: ${{ runner.home }}/theos-roothide
         run: |
+          export THEOS="$HOME/theos-roothide"
           set -e
           "$(brew --prefix make)/bin/gmake" clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=roothide
           cp packages/*_iphoneos-arm*.deb ../Atria-ZD.roothide.deb
@@ -62,9 +61,8 @@ jobs:
 
       - name: Build rootless deb
         working-directory: atria
-        env:
-          THEOS: ${{ runner.home }}/theos-rootless
         run: |
+          export THEOS="$HOME/theos-rootless"
           set -e
           "$(brew --prefix make)/bin/gmake" clean package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           cp packages/*_iphoneos-arm*.deb ../Atria-ZD.rootless.deb
